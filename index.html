@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Vaidhya — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0D1117;
+  --bg2:#161B22;
+  --bg3:#21262D;
+  --text:#E6EDF3;
+  --text2:#8B949E;
+  --text3:#6E7681;
+  --accent:#F0A500;
+  --accent2:#58A6FF;
+  --border:#30363D;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Outfit',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;transition:all .3s ease;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(13,17,23,.92);backdrop-filter:blur(12px);border-color:var(--border)}
+.nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:.02em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#0D1117;padding:.5rem 1.2rem;border-radius:4px;font-weight:600;font-size:.85rem;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem 4rem;max-width:1100px;margin:0 auto}
+.hero-inner{max-width:760px}
+.hero-label{font-family:var(--mono);font-size:.8rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem}
+.hero-label::before{content:'';display:block;width:32px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--serif);font-size:clamp(3rem,8vw,5.5rem);font-weight:600;line-height:1.05;margin-bottom:1.5rem;letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:1.15rem;color:var(--text2);max-width:540px;line-height:1.8;margin-bottom:2.5rem}
+.hero-sub strong{color:var(--text);font-weight:500}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#0D1117;padding:.8rem 2rem;border-radius:4px;font-weight:600;font-size:.95rem;text-decoration:none;transition:opacity .2s;font-family:var(--sans)}
+.btn-primary:hover{opacity:.85}
+.btn-secondary{border:1px solid var(--border);color:var(--text2);padding:.8rem 2rem;border-radius:4px;font-weight:500;font-size:.95rem;text-decoration:none;transition:all .2s}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.hero-scroll{margin-top:5rem;display:flex;align-items:center;gap:.8rem;color:var(--text3);font-size:.8rem;font-family:var(--mono);letter-spacing:.06em}
+.scroll-line{width:40px;height:1px;background:var(--text3)}
+
+/* SECTIONS */
+section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-family:var(--mono);font-size:.75rem;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.1;margin-bottom:3rem}
+.divider{width:100%;height:1px;background:var(--border);margin:0 auto}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{color:var(--text2);line-height:1.9;margin-bottom:1.2rem;font-size:1.05rem}
+.about-text p strong{color:var(--text);font-weight:500}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.5rem;transition:border-color .2s}
+.stat-card:hover{border-color:var(--accent)}
+.stat-num{font-family:var(--serif);font-size:2.5rem;font-weight:600;color:var(--accent);line-height:1}
+.stat-label{font-size:.8rem;color:var(--text3);margin-top:.4rem;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.about-links{margin-top:1.5rem;display:flex;gap:1rem}
+.about-link{display:flex;align-items:center;gap:.5rem;color:var(--text2);text-decoration:none;font-size:.9rem;font-family:var(--mono);transition:color .2s}
+.about-link:hover{color:var(--accent)}
+.about-link svg{width:16px;height:16px}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:2rem}
+.exp-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:2rem;transition:border-color .3s;position:relative;overflow:hidden}
+.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transition:transform .3s;transform-origin:bottom}
+.exp-card:hover::before{transform:scaleY(1)}
+.exp-card:hover{border-color:var(--border)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;gap:1rem;flex-wrap:wrap}
+.exp-role{font-size:1.1rem;font-weight:600;color:var(--text)}
+.exp-company{color:var(--accent);font-size:.9rem;font-family:var(--mono);margin-top:.2rem}
+.exp-dates{font-family:var(--mono);font-size:.8rem;color:var(--text3);white-space:nowrap;background:var(--bg3);padding:.3rem .8rem;border-radius:4px;border:1px solid var(--border)}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.exp-bullets li{color:var(--text2);font-size:.95rem;padding-left:1.2rem;position:relative;line-height:1.7}
+.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.8rem;top:.05rem}
+.exp-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.exp-tag{font-family:var(--mono);font-size:.72rem;color:var(--text3);background:var(--bg3);border:1px solid var(--border);padding:.2rem .7rem;border-radius:3px;letter-spacing:.04em}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.proj-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.8rem;transition:all .3s;display:flex;flex-direction:column;gap:1rem}
+.proj-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.proj-card.featured{border-color:rgba(240,165,0,.3);background:rgba(240,165,0,.03)}
+.proj-header{display:flex;justify-content:space-between;align-items:flex-start}
+.proj-name{font-size:1.05rem;font-weight:600;color:var(--text)}
+.proj-badge{font-family:var(--mono);font-size:.65rem;color:var(--accent);background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.3);padding:.2rem .6rem;border-radius:3px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.proj-desc{color:var(--text2);font-size:.9rem;line-height:1.8;flex:1}
+.proj-desc strong{color:var(--text);font-weight:500}
+.proj-stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.proj-tech{font-family:var(--mono);font-size:.7rem;color:var(--accent2);background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.2);padding:.15rem .6rem;border-radius:3px}
+.proj-link{display:flex;align-items:center;gap:.5rem;color:var(--text3);font-size:.85rem;font-family:var(--mono);text-decoration:none;transition:color .2s;margin-top:.5rem}
+.proj-link:hover{color:var(--accent)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.skill-group{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.5rem}
+.skill-group-label{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.skill-tag{font-size:.85rem;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:.3rem .8rem;border-radius:4px}
+
+/* CONTACT */
+.contact-inner{max-width:600px}
+.contact-text{color:var(--text2);font-size:1.05rem;line-height:1.9;margin-bottom:2.5rem}
+.contact-links{display:flex;flex-direction:column;gap:1rem}
+.contact-link{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:all .2s;color:var(--text)}
+.contact-link:hover{border-color:var(--accent);transform:translateX(4px)}
+.contact-link-icon{width:40px;height:40px;background:var(--bg3);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-link-icon svg{width:18px;height:18px;color:var(--accent)}
+.contact-link-info span{display:block;font-size:.8rem;color:var(--text3);font-family:var(--mono)}
+.contact-link-info strong{font-size:.95rem;font-weight:500}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--text3);font-size:.8rem;font-family:var(--mono)}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .about-stats{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:2.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">RV<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Available for Internships</div>
+    <h1>Rahul<br><span>Vaidhya</span></h1>
+    <p class="hero-sub">
+      B.Tech CSE student at <strong>Shiv Nadar University</strong> building things across the stack —
+      from full-stack web applications to cloud infrastructure and systems-level programming.
+      <strong>CGPA: 8.5</strong> · Chennai, India.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="https://github.com/rahul-vaidhya" target="_blank" class="btn-secondary">GitHub →</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      scroll to explore
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="section-title">Who I Am</div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm a second-year Computer Science undergraduate at Shiv Nadar University who builds things across the stack — from full-stack web apps to kernel-level systems and cloud infrastructure.</p>
+      <p>My work spans <strong>systems programming</strong> (HybridFS — adaptive filesystem in xv6-riscv), <strong>full-stack development</strong> (PetConnect, HostelSync), and <strong>cloud infrastructure</strong> (AWS Academy trained). I also interned at <strong>Network Science</strong>, working with the CTO on system workflows and documentation infrastructure for an AI-driven enterprise platform.</p>
+      <p>I'm currently looking for software engineering internships where I can contribute, learn, and grow.</p>
+      <div class="about-links">
+        <a href="https://www.linkedin.com/in/rahul-vaidhya-322a5630b" target="_blank" class="about-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/rahul-vaidhya" target="_blank" class="about-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:rahulvaidhya.ragz@gmail.com" class="about-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+    <div class="about-stats reveal reveal-delay-2">
+      <div class="stat-card">
+        <div class="stat-num">8.5</div>
+        <div class="stat-label">CGPA at SNU</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Projects Built</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Internships</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2</div>
+        <div class="stat-label">AWS Badges</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <div class="section-title">Where I've Worked</div>
+  <div class="exp-list">
+
+    <div class="exp-card reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Software Developer — TVL Project</div>
+          <div class="exp-company">Shiv Nadar University</div>
+        </div>
+        <div class="exp-dates">Feb 2026 – May 2026</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Co-developed PetConnect, a funded pet services marketplace (₹50,000 SNU TVL budget), connecting 27 users across 3 roles — Vets, Groomers, and Pet Owners — with 30+ bookings processed.</li>
+        <li>Built the full backend on Supabase with a normalized multi-role schema, Clerk-based auth and onboarding, vet document verification flow, and end-to-end booking management.</li>
+        <li>Primarily owned database architecture, authentication system, and service listing infrastructure from scratch.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="exp-tag">Supabase</span>
+        <span class="exp-tag">Clerk</span>
+        <span class="exp-tag">JavaScript</span>
+        <span class="exp-tag">PostgreSQL</span>
+        <span class="exp-tag">Full-Stack</span>
+      </div>
+    </div>
+
+    <div class="exp-card reveal reveal-delay-1">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Engineering Documentation Intern</div>
+          <div class="exp-company">Network Science — Netscience Technologies Pvt. Ltd.</div>
+        </div>
+        <div class="exp-dates">Dec 2025 – Jan 2026</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Researched and evaluated self-hosted documentation platforms (Outline, DeepWiki) for RBAC, local hosting, and DPDP/GDPR compliance; presented findings to stakeholders for tool selection.</li>
+        <li>Designed system workflows integrating multiple AI tools; created and maintained technical and product documentation for internal and external audiences.</li>
+        <li>Held progress syncs every 2–3 days with the CTO, collaborating across engineering, product, and DevOps teams to align documentation with evolving platform architecture.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="exp-tag">Technical Writing</span>
+        <span class="exp-tag">System Design</span>
+        <span class="exp-tag">DevOps</span>
+        <span class="exp-tag">AI Tools</span>
+        <span class="exp-tag">GDPR/DPDP</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <div class="section-title">What I've Built</div>
+  <div class="proj-grid">
+
+    <div class="proj-card featured reveal">
+      <div class="proj-header">
+        <div class="proj-name">PetConnect</div>
+        <div class="proj-badge">Featured</div>
+      </div>
+      <p class="proj-desc">Full-stack pet services marketplace connecting <strong>27 users</strong> across 3 roles — Vets, Groomers, and Pet Owners — with <strong>30+ bookings</strong> processed. Built with role-based access, vet credential verification, and end-to-end booking flow. Funded at <strong>₹50,000</strong> under SNU's TVL program.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">Supabase</span>
+        <span class="proj-tech">Clerk</span>
+        <span class="proj-tech">JavaScript</span>
+        <span class="proj-tech">PostgreSQL</span>
+      </div>
+      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
+    </div>
+
+    <div class="proj-card reveal reveal-delay-1">
+      <div class="proj-header">
+        <div class="proj-name">HostelSync</div>
+      </div>
+      <p class="proj-desc">Smart hostel management system with a <strong>3NF-normalized MySQL database</strong> (10 entities), 3 triggers for real-time occupancy updates and gender/capacity validation, 5 stored procedures, 5 views, and a Node.js/Express.js REST API backend.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">MySQL</span>
+        <span class="proj-tech">Node.js</span>
+        <span class="proj-tech">Express.js</span>
+        <span class="proj-tech">HTML/CSS/JS</span>
+      </div>
+      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
+    </div>
+
+    <div class="proj-card reveal reveal-delay-2">
+      <div class="proj-header">
+        <div class="proj-name">HybridFS</div>
+      </div>
+      <p class="proj-desc">Adaptive two-tier filesystem inside the <strong>xv6-riscv kernel</strong> in C, dynamically switching between Copy-on-Write and in-place overwrite. Reduced write amplification by <strong>43.5–45%</strong> on mixed workloads. Added 2 new system calls for runtime control.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">C</span>
+        <span class="proj-tech">RISC-V</span>
+        <span class="proj-tech">xv6</span>
+        <span class="proj-tech">OS Internals</span>
+      </div>
+      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-header">
+        <div class="proj-name">AWS Cloud Architecture</div>
+      </div>
+      <p class="proj-desc">Completed AWS Academy <strong>Cloud Architecting (60 hrs)</strong> and <strong>Cloud Foundations (20 hrs)</strong>, earning two Credly-verified training badges. Hands-on with EC2, S3, VPC, IAM, RDS, Lambda, and CloudFormation.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">AWS EC2</span>
+        <span class="proj-tech">S3</span>
+        <span class="proj-tech">Lambda</span>
+        <span class="proj-tech">CloudFormation</span>
+      </div>
+    </div>
+
+    <div class="proj-card reveal reveal-delay-1">
+      <div class="proj-header">
+        <div class="proj-name">Whack-a-Mole Game</div>
+      </div>
+      <p class="proj-desc">GUI-based multithreaded game built with <strong>Java Swing and threads</strong>, featuring bomb/bonus mechanics and persistent high-score storage across sessions.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">Java</span>
+        <span class="proj-tech">Swing</span>
+        <span class="proj-tech">Threads</span>
+      </div>
+      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
+    </div>
+
+    <div class="proj-card reveal reveal-delay-2">
+      <div class="proj-header">
+        <div class="proj-name">Pokémon Tournament Simulator</div>
+      </div>
+      <p class="proj-desc">CLI-based Pokémon battle simulator with <strong>type-based combat</strong>, modular team/roster structure, scoring logic, and a single-elimination bracket system. Demonstrates core OOP design patterns.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">Java</span>
+        <span class="proj-tech">OOP</span>
+        <span class="proj-tech">CLI</span>
+      </div>
+      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <div class="section-title">What I Work With</div>
+  <div class="skills-grid">
+    <div class="skill-group reveal">
+      <div class="skill-group-label">Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-group reveal reveal-delay-1">
+      <div class="skill-group-label">Web & Backend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express.js</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+      </div>
+    </div>
+    <div class="skill-group reveal reveal-delay-2">
+      <div class="skill-group-label">Database</div>
+      <div class="skill-tags">
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Supabase</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Normalization</span>
+        <span class="skill-tag">Triggers</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-label">Cloud & DevOps</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS EC2</span>
+        <span class="skill-tag">S3</span>
+        <span class="skill-tag">Lambda</span>
+        <span class="skill-tag">VPC</span>
+        <span class="skill-tag">IAM</span>
+        <span class="skill-tag">RDS</span>
+      </div>
+    </div>
+    <div class="skill-group reveal reveal-delay-1">
+      <div class="skill-group-label">Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">VS Code</span>
+        <span class="skill-tag">Clerk</span>
+        <span class="skill-tag">MySQL Workbench</span>
+      </div>
+    </div>
+    <div class="skill-group reveal reveal-delay-2">
+      <div class="skill-group-label">AI & LLM Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Claude</span>
+        <span class="skill-tag">ChatGPT</span>
+        <span class="skill-tag">Gemini</span>
+        <span class="skill-tag">NotebookLM</span>
+        <span class="skill-tag">Gamma</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">Let's Talk</div>
+  <div class="contact-inner">
+    <p class="contact-text reveal">
+      I'm actively looking for software engineering internship opportunities. 
+      If you're hiring or just want to connect, reach out — I reply fast.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:rahulvaidhya.ragz@gmail.com" class="contact-link reveal">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-link-info">
+          <span>Email</span>
+          <strong>rahulvaidhya.ragz@gmail.com</strong>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/rahul-vaidhya-322a5630b" target="_blank" class="contact-link reveal reveal-delay-1">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div class="contact-link-info">
+          <span>LinkedIn</span>
+          <strong>linkedin.com/in/rahul-vaidhya-322a5630b</strong>
+        </div>
+      </a>
+      <a href="https://github.com/rahul-vaidhya" target="_blank" class="contact-link reveal reveal-delay-2">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </div>
+        <div class="contact-link-info">
+          <span>GitHub</span>
+          <strong>github.com/rahul-vaidhya</strong>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600">Rahul Vaidhya</span>
+  &nbsp;·&nbsp; B.Tech CSE · Shiv Nadar University 2028 &nbsp;·&nbsp; Chennai, India
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>40)
+});
+
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add('visible')
+  })
+},{threshold:.12});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
