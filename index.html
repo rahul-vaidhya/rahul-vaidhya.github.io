@@ -163,9 +163,9 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
     <div class="hero-label">Available for Internships</div>
     <h1>Rahul<br><span>Vaidhya</span></h1>
     <p class="hero-sub">
-      B.Tech CSE student at <strong>Shiv Nadar University</strong> building things across the stack —
-      from full-stack web applications to cloud infrastructure and systems-level programming.
-      <strong>CGPA: 8.5</strong> · Chennai, India.
+      B.Tech CSE at <strong>Shiv Nadar University</strong> — Technical Lead on a production AI platform,
+      building full-stack and backend features while running the CI/CD and deploy pipeline for a
+      10+ engineer team. <strong>CGPA: 8.4</strong> · Chennai, India.
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View My Work</a>
@@ -186,9 +186,9 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
   <div class="section-title">Who I Am</div>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I'm a second-year Computer Science undergraduate at Shiv Nadar University who builds things across the stack — from full-stack web apps to kernel-level systems and cloud infrastructure.</p>
-      <p>My work spans <strong>systems programming</strong> (HybridFS — adaptive filesystem in xv6-riscv), <strong>full-stack development</strong> (PetConnect, HostelSync), and <strong>cloud infrastructure</strong> (AWS Academy trained). I also interned at <strong>Network Science</strong>, working with the CTO on system workflows and documentation infrastructure for an AI-driven enterprise platform.</p>
-      <p>I'm currently looking for software engineering internships where I can contribute, learn, and grow.</p>
+      <p>I'm a third-year Computer Science undergraduate at Shiv Nadar University, currently Technical Lead on <strong>Moving Assistant</strong> — an AI-assisted relocation platform built by a 10+ engineer team, where I own CI/CD, security, and deployment, and ship features across the Next.js frontend and FastAPI backend.</p>
+      <p>Before that: <strong>systems programming</strong> (HybridFS, an adaptive filesystem inside the xv6-riscv kernel), a funded full-stack marketplace (<strong>PetConnect</strong>, shipped to 27 real users), and an internship at <strong>Network Science</strong> evaluating documentation infrastructure for compliance and leading its DevOps rollout.</p>
+      <p>I'm also benchmarking post-quantum cryptography for constrained IoT devices under Prof. Rajib Mall at SNU. Open to software engineering internships.</p>
       <div class="about-links">
         <a href="https://www.linkedin.com/in/rahul-vaidhya-322a5630b" target="_blank" class="about-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -206,16 +206,16 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
     </div>
     <div class="about-stats reveal reveal-delay-2">
       <div class="stat-card">
-        <div class="stat-num">8.5</div>
+        <div class="stat-num">8.4</div>
         <div class="stat-label">CGPA at SNU</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">6+</div>
+        <div class="stat-num">8+</div>
         <div class="stat-label">Projects Built</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">2</div>
-        <div class="stat-label">Internships</div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Roles Held</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">2</div>
@@ -236,43 +236,64 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
     <div class="exp-card reveal">
       <div class="exp-header">
         <div>
-          <div class="exp-role">Software Developer — TVL Project</div>
-          <div class="exp-company">Shiv Nadar University</div>
+          <div class="exp-role">Technical Lead, Full-Stack Platform</div>
+          <div class="exp-company">Moving Assistant — PM Accelerator</div>
         </div>
-        <div class="exp-dates">Feb 2026 – May 2026</div>
+        <div class="exp-dates">Aug 2026 – Present</div>
       </div>
       <ul class="exp-bullets">
-        <li>Co-developed PetConnect, a funded pet services marketplace (₹50,000 SNU TVL budget), connecting 27 users across 3 roles — Vets, Groomers, and Pet Owners — with 30+ bookings processed.</li>
-        <li>Built the full backend on Supabase with a normalized multi-role schema, Clerk-based auth and onboarding, vet document verification flow, and end-to-end booking management.</li>
-        <li>Primarily owned database architecture, authentication system, and service listing infrastructure from scratch.</li>
+        <li>Full-stack engineer on an AI-assisted relocation-planning platform (Next.js/TypeScript, FastAPI/Python, Supabase/PostgreSQL) built by a distributed team of 10+ engineers; own CI/CD, security, and deployment, and ship features across frontend and backend.</li>
+        <li>Built a personalization feature on the <code>/ai/answer</code> endpoint reading a user's saved onboarding profile into the AI prompt context, plus a versioned/switchable prompt system.</li>
+        <li>Fixed a client-side Next.js auth bug where Supabase magic-link errors were silently dropped from the URL fragment.</li>
+        <li>Built the GitHub Actions CI pipeline, enforced Row Level Security and revoked destructive DB grants in CI, and shipped the containerized Google Cloud Run staging deployment.</li>
+        <li>Built the LLM evaluation harness (7-dimension rubric, ground-truth schema, automated Claude-based scoring). 20+ reviewed, merged commits.</li>
       </ul>
       <div class="exp-tags">
+        <span class="exp-tag">Next.js</span>
+        <span class="exp-tag">FastAPI</span>
         <span class="exp-tag">Supabase</span>
-        <span class="exp-tag">Clerk</span>
-        <span class="exp-tag">JavaScript</span>
-        <span class="exp-tag">PostgreSQL</span>
-        <span class="exp-tag">Full-Stack</span>
+        <span class="exp-tag">Google Cloud Run</span>
+        <span class="exp-tag">CI/CD</span>
       </div>
     </div>
 
     <div class="exp-card reveal reveal-delay-1">
       <div class="exp-header">
         <div>
-          <div class="exp-role">Engineering Documentation Intern</div>
+          <div class="exp-role">Software Developer — PetConnect, TVL Project</div>
+          <div class="exp-company">Shiv Nadar University</div>
+        </div>
+        <div class="exp-dates">Feb 2026 – May 2026</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Co-developed PetConnect, a funded pet-care marketplace (INR 50,000 SNU TVL budget) built as React Native (Expo, TypeScript) on a Supabase/PostgreSQL backend.</li>
+        <li>Engineered a custom Clerk-JWT-to-Supabase auth bridge enforcing per-user data isolation via Row Level Security, and designed a 4-role system with role-scoped dashboards.</li>
+        <li>Shipped to real users: 27 registered users, 30+ bookings processed, 3 provider credentials verified.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="exp-tag">React Native</span>
+        <span class="exp-tag">Clerk</span>
+        <span class="exp-tag">TypeScript</span>
+        <span class="exp-tag">PostgreSQL</span>
+        <span class="exp-tag">Row Level Security</span>
+      </div>
+    </div>
+
+    <div class="exp-card reveal reveal-delay-2">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Engineering Intern</div>
           <div class="exp-company">Network Science — Netscience Technologies Pvt. Ltd.</div>
         </div>
         <div class="exp-dates">Dec 2025 – Jan 2026</div>
       </div>
       <ul class="exp-bullets">
-        <li>Researched and evaluated self-hosted documentation platforms (Outline, DeepWiki) for RBAC, local hosting, and DPDP/GDPR compliance; presented findings to stakeholders for tool selection.</li>
-        <li>Designed system workflows integrating multiple AI tools; created and maintained technical and product documentation for internal and external audiences.</li>
-        <li>Held progress syncs every 2–3 days with the CTO, collaborating across engineering, product, and DevOps teams to align documentation with evolving platform architecture.</li>
+        <li>Evaluated documentation platforms (Outline, DeepWiki) against RBAC, self-hosting, and DPDP/GDPR compliance criteria; findings directly determined the platform selection, then led the DevOps deployment.</li>
+        <li>Co-built an automated documentation pipeline and held progress syncs every 2–3 days with the CTO as the platform evolved.</li>
       </ul>
       <div class="exp-tags">
-        <span class="exp-tag">Technical Writing</span>
-        <span class="exp-tag">System Design</span>
+        <span class="exp-tag">RBAC</span>
         <span class="exp-tag">DevOps</span>
-        <span class="exp-tag">AI Tools</span>
         <span class="exp-tag">GDPR/DPDP</span>
       </div>
     </div>
@@ -290,48 +311,60 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
 
     <div class="proj-card featured reveal">
       <div class="proj-header">
-        <div class="proj-name">PetConnect</div>
+        <div class="proj-name">HybridFS</div>
         <div class="proj-badge">Featured</div>
       </div>
-      <p class="proj-desc">Full-stack pet services marketplace connecting <strong>27 users</strong> across 3 roles — Vets, Groomers, and Pet Owners — with <strong>30+ bookings</strong> processed. Built with role-based access, vet credential verification, and end-to-end booking flow. Funded at <strong>₹50,000</strong> under SNU's TVL program.</p>
-      <div class="proj-stack">
-        <span class="proj-tech">Supabase</span>
-        <span class="proj-tech">Clerk</span>
-        <span class="proj-tech">JavaScript</span>
-        <span class="proj-tech">PostgreSQL</span>
-      </div>
-      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
-    </div>
-
-    <div class="proj-card reveal reveal-delay-1">
-      <div class="proj-header">
-        <div class="proj-name">HostelSync</div>
-      </div>
-      <p class="proj-desc">Smart hostel management system with a <strong>3NF-normalized MySQL database</strong> (10 entities), 3 triggers for real-time occupancy updates and gender/capacity validation, 5 stored procedures, 5 views, and a Node.js/Express.js REST API backend.</p>
-      <div class="proj-stack">
-        <span class="proj-tech">MySQL</span>
-        <span class="proj-tech">Node.js</span>
-        <span class="proj-tech">Express.js</span>
-        <span class="proj-tech">HTML/CSS/JS</span>
-      </div>
-      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
-    </div>
-
-    <div class="proj-card reveal reveal-delay-2">
-      <div class="proj-header">
-        <div class="proj-name">HybridFS</div>
-      </div>
-      <p class="proj-desc">Adaptive two-tier filesystem inside the <strong>xv6-riscv kernel</strong> in C, dynamically switching between Copy-on-Write and in-place overwrite. Reduced write amplification by <strong>43.5–45%</strong> on mixed workloads. Added 2 new system calls for runtime control.</p>
+      <p class="proj-desc">Adaptive filesystem policy inside the <strong>xv6-riscv kernel</strong>, selecting per inode between copy-on-write and in-place overwrite based on live write-amplification stats. <strong>43.5–45% write-amplification reduction</strong> on mixed/phase-shifted workloads (p &lt; 0.001), validated across 5 workload classes × 10 runs each. Two runtime-tunable syscalls.</p>
       <div class="proj-stack">
         <span class="proj-tech">C</span>
         <span class="proj-tech">RISC-V</span>
         <span class="proj-tech">xv6</span>
         <span class="proj-tech">OS Internals</span>
       </div>
-      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
+      <a href="https://github.com/rahul-vaidhya/HybridFS" target="_blank" class="proj-link">→ View on GitHub</a>
+    </div>
+
+    <div class="proj-card reveal reveal-delay-1">
+      <div class="proj-header">
+        <div class="proj-name">Rockfall-Predictions</div>
+      </div>
+      <p class="proj-desc">Systematically evaluated <strong>5 distinct ML algorithm families</strong> (Random Forest, Gradient Boosting, Extra Trees, SVC, MLP) for rockfall risk prediction, then combined the strongest performers into a voting classifier ensemble. 5-fold stratified cross-validation, permutation importance. Reported <strong>94.2% accuracy, 92.1% F1-score</strong>.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">Python</span>
+        <span class="proj-tech">scikit-learn</span>
+        <span class="proj-tech">Ensemble Learning</span>
+      </div>
+      <a href="https://github.com/rahul-vaidhya/Rockfall-Predictions" target="_blank" class="proj-link">→ View on GitHub</a>
+    </div>
+
+    <div class="proj-card reveal reveal-delay-2">
+      <div class="proj-header">
+        <div class="proj-name">HostelSync</div>
+      </div>
+      <p class="proj-desc">Smart hostel management system with a <strong>3NF-normalized MySQL database</strong> (10 entities), 3 triggers for real-time occupancy updates and gender/capacity validation, 5 stored procedures, 4 functions, 5 views, and a Node.js/Express.js REST API backend.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">MySQL</span>
+        <span class="proj-tech">Node.js</span>
+        <span class="proj-tech">Express.js</span>
+        <span class="proj-tech">HTML/CSS/JS</span>
+      </div>
+      <a href="https://github.com/rahul-vaidhya/SmartHostelManagementSystem" target="_blank" class="proj-link">→ View on GitHub</a>
     </div>
 
     <div class="proj-card reveal">
+      <div class="proj-header">
+        <div class="proj-name">cifar-cnn-study</div>
+      </div>
+      <p class="proj-desc">Benchmarked a <strong>CNN trained from scratch</strong> against a fine-tuned <strong>ResNet-18</strong> on CIFAR-10, isolating the effect of data augmentation and transfer learning. ResNet-18 reached <strong>92.10%</strong> test accuracy; from-scratch + augmentation reached <strong>89.38%</strong> after a 50-epoch run.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">Python</span>
+        <span class="proj-tech">CNNs</span>
+        <span class="proj-tech">Transfer Learning</span>
+      </div>
+      <a href="https://github.com/rahul-vaidhya/cifar-cnn-study" target="_blank" class="proj-link">→ View on GitHub</a>
+    </div>
+
+    <div class="proj-card reveal reveal-delay-1">
       <div class="proj-header">
         <div class="proj-name">AWS Cloud Architecture</div>
       </div>
@@ -344,7 +377,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
       </div>
     </div>
 
-    <div class="proj-card reveal reveal-delay-1">
+    <div class="proj-card reveal reveal-delay-2">
       <div class="proj-header">
         <div class="proj-name">Whack-a-Mole Game</div>
       </div>
@@ -354,10 +387,10 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
         <span class="proj-tech">Swing</span>
         <span class="proj-tech">Threads</span>
       </div>
-      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
+      <a href="https://github.com/rahul-vaidhya/whackAmoleJava" target="_blank" class="proj-link">→ View on GitHub</a>
     </div>
 
-    <div class="proj-card reveal reveal-delay-2">
+    <div class="proj-card reveal">
       <div class="proj-header">
         <div class="proj-name">Pokémon Tournament Simulator</div>
       </div>
@@ -367,7 +400,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
         <span class="proj-tech">OOP</span>
         <span class="proj-tech">CLI</span>
       </div>
-      <a href="https://github.com/rahul-vaidhya" target="_blank" class="proj-link">→ View on GitHub</a>
+      <a href="https://github.com/rahul-vaidhya/pokemonSimulatorJava" target="_blank" class="proj-link">→ View on GitHub</a>
     </div>
 
   </div>
@@ -383,42 +416,46 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
     <div class="skill-group reveal">
       <div class="skill-group-label">Languages</div>
       <div class="skill-tags">
+        <span class="skill-tag">Python</span>
         <span class="skill-tag">C</span>
-        <span class="skill-tag">C++</span>
         <span class="skill-tag">Java</span>
+        <span class="skill-tag">TypeScript</span>
         <span class="skill-tag">JavaScript</span>
         <span class="skill-tag">SQL</span>
       </div>
     </div>
     <div class="skill-group reveal reveal-delay-1">
-      <div class="skill-group-label">Web & Backend</div>
+      <div class="skill-group-label">Frameworks & Backend</div>
       <div class="skill-tags">
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Next.js</span>
+        <span class="skill-tag">React Native</span>
         <span class="skill-tag">Node.js</span>
         <span class="skill-tag">Express.js</span>
+        <span class="skill-tag">FastAPI</span>
         <span class="skill-tag">REST APIs</span>
-        <span class="skill-tag">HTML</span>
-        <span class="skill-tag">CSS</span>
       </div>
     </div>
     <div class="skill-group reveal reveal-delay-2">
-      <div class="skill-group-label">Database</div>
+      <div class="skill-group-label">Databases & Cloud</div>
       <div class="skill-tags">
         <span class="skill-tag">MySQL</span>
-        <span class="skill-tag">Supabase</span>
         <span class="skill-tag">PostgreSQL</span>
-        <span class="skill-tag">Normalization</span>
-        <span class="skill-tag">Triggers</span>
+        <span class="skill-tag">Supabase</span>
+        <span class="skill-tag">Row Level Security</span>
+        <span class="skill-tag">Google Cloud Run</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">GitHub Actions CI/CD</span>
       </div>
     </div>
     <div class="skill-group reveal">
-      <div class="skill-group-label">Cloud & DevOps</div>
+      <div class="skill-group-label">Systems</div>
       <div class="skill-tags">
-        <span class="skill-tag">AWS EC2</span>
-        <span class="skill-tag">S3</span>
-        <span class="skill-tag">Lambda</span>
-        <span class="skill-tag">VPC</span>
-        <span class="skill-tag">IAM</span>
-        <span class="skill-tag">RDS</span>
+        <span class="skill-tag">OS Internals</span>
+        <span class="skill-tag">Kernel Development</span>
+        <span class="skill-tag">RISC-V</span>
+        <span class="skill-tag">Concurrency</span>
       </div>
     </div>
     <div class="skill-group reveal reveal-delay-1">
@@ -428,17 +465,8 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
         <span class="skill-tag">GitHub</span>
         <span class="skill-tag">VS Code</span>
         <span class="skill-tag">Clerk</span>
-        <span class="skill-tag">MySQL Workbench</span>
-      </div>
-    </div>
-    <div class="skill-group reveal reveal-delay-2">
-      <div class="skill-group-label">AI & LLM Tools</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Claude</span>
-        <span class="skill-tag">ChatGPT</span>
-        <span class="skill-tag">Gemini</span>
-        <span class="skill-tag">NotebookLM</span>
-        <span class="skill-tag">Gamma</span>
+        <span class="skill-tag">JWT</span>
+        <span class="skill-tag">Tailwind CSS</span>
       </div>
     </div>
   </div>
